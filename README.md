@@ -84,19 +84,19 @@ function think(inputs) {
 
 ```javascript
 console.log("Initial Weights: " + weights + "\n");
-// Output Example: Initial Weights: -0.30,-0.73,0.37
+// Output Example => Initial Weights: -0.30,-0.73,0.37
 
 train(inputs, test_result, 10000);
 
 console.log("Trained Weights: " + weights + "\n");
-// Output Example: 9.67,-0.20,-4.62
+// Output Example => Trained Weights: 9.67,-0.20,-4.62
 ```
 
 နမူနာအရ မူလ `wights` သည် Random ဖြစ်သော်လည်း အကြိမ် `10,000` Train ပြီးသော နောက်တွင် ရရှိလာသော `weights` အရ Array Matrix တွင် ရှေ့ဆုံးတန်ဖိုးက ကျန်နှစ်ခုထက် သိသိသာသာ ကြီးနေသည်ကို တွေ့နိုင်ပေသည်။ ဤကဲ့သို့ ရရှိလာသော `weights` ကို သုံး၍ ဒေတာသစ်များကို စမ်းသပ်ကြည့်နိုင်သည်။
 
 ```javascript
 console.log( think( [[1, 0, 0], [0, 1, 0]] ) );
-// Output Example: [ 0.99, 0.44 ]
+// Output Example => [ 0.99, 0.44 ]
 ```
 
 နမူနာအရ `1, 0, 0` အတွက် အဖြေသည် `0.99` ဖြစ်၍ `0, 1, 0` အတွက် အဖြေကမူ `0.44` ဖြစ်နေသည်ကို တွေ့ရပေမည်။ အနီးဆုံးယူလိုက်လျှင် `1, 0, 0` အတွက် အဖြေ `1` ဖြစ်၍ `0, 1, 0` အတွက် အဖြေ `0` ဖြစ်သည်။ ယခုအခါ မူလနမူနာ ဒေတာတွင် မပါသော ဒေတာသစ်များကိုပင် အဖြေမှန် ထုတ်ပေးနိုင်သော ပရိုဂရမ်ငယ်တစ်ခုကို ရရှိသွားပေတော့သည်။ အံ့ဖွယ် ကောင်းလေစွတကား...
