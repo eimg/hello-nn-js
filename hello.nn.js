@@ -118,7 +118,7 @@ console.log("Initial Weights: " + weights + "\n");
 train(inputs, test_result, 10000);
 
 /* === Trained Weight === */
-console.log("Initial Weights: " + weights + "\n");
+console.log("Trained Weights: " + weights + "\n");
 
 /* === Testing === */
 console.log( think( [[1, 0, 0], [0, 1, 0]] ) );
