@@ -103,3 +103,7 @@ console.log( think( [[1, 0, 0], [0, 1, 0]] ) );
 
 * မူရင်း Python နမူနာကို [ဤနေရာတွင်](https://medium.com/technology-invention-and-more/how-to-build-a-simple-neural-network-in-9-lines-of-python-code-cc8f23647ca1) လေ့လာနိုင်သည်
 * ကျွန်ုပ်၏ JavaScript ကုဒ်အပြည့်အစုံကို [ဤနေရာတွင်](https://github.com/eimg/hello-nn-js/blob/master/hello.nn.js) လေ့လာနိုင်သည်
+
+မူရင်း Python နမူနာတွင် သင်္ချာဆိုင်ရာ တွက်ချက်မှုများအတွက် Numpy ခေါ် Math library ကို အသုံးပြု၍ ဖော်ပြထားသဖြင့် စမ်းသပ် ကြည့်နိုင်ရန် Numby လိုအပ်ပေလိမ့်မည်။ စာရေးသူ၏ JavaScript တွင်မူ ဤကဲ့သို့ Library မျိုးကို အသုံးမပြုပဲ Matrix Multiplication, Transpose စသည့် လိုအပ်သည့် လုပ်ဆောင်ချက်များကို ဆောင်ရွက်ပေးနိုင်သော Helper Function များကို တစ်ပါတည်း ထည့်သွင်း ရေးသားထားသဖြင့် Dependency မရှိပဲ တိုက်ရိုက်စမ်းနိုင်သည်။
+
+ကျေးဇူးတင်ပါသည်။

@@ -90,7 +90,7 @@ function array_multi(a, b) {
     return result;
 }
 
-// Array matrix transport (column to row)
+// Array matrix transpose (column to row)
 function T(a){
     var result = [];
     for(var i = 0; i < a[0].length; i++){
