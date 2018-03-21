@@ -14,7 +14,13 @@ function train(inputs, test_result, iterations) {
         var output = think(inputs);
         var error = array_sub(test_result, output);
 
-        var adjustment = dot(T(inputs), array_multi(error, sigmoid_derivative(output)));
+        var adjustment = dot(
+            T(inputs),
+            array_multi(
+                error,
+                sigmoid_derivative(output)
+            )
+        );
 
         weights = array_add(weights, adjustment);
     }
