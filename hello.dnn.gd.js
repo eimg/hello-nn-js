@@ -9,8 +9,15 @@ var inputs = nj.array([
 
 var test_result = nj.array([[0, 0, 1, 1]]).T;
 
-var weights_zero = nj.array(rand(3, 4));
-var weights_one = nj.array(rand(4, 1));
+// Gradient slope : should neither too small nor too big
+// Needed to be try with different values for better result
+var alpha = 10;
+
+// Size of hidden layers
+var hidden = 32;
+
+var weights_zero = nj.array(rand(3, hidden));
+var weights_one = nj.array(rand(hidden, 1));
 
 function train(inputs, test_result, iterations) {
     for(var i = 0; i < iterations; i++) {
@@ -19,7 +26,7 @@ function train(inputs, test_result, iterations) {
         var layer_one = nj.sigmoid( layer_zero.dot(weights_zero) );
         var layer_two = nj.sigmoid( layer_one.dot(weights_one) );
 
-        var layer_two_error = test_result.subtract(layer_two);
+        var layer_two_error = layer_two.subtract(test_result);
 
         if ((i % 10000) == 0) {
             console.log("Error:" + nj.mean(nj.abs(layer_two_error)));
@@ -31,8 +38,13 @@ function train(inputs, test_result, iterations) {
         var layer_one_delta = layer_one_error.multiply( curve(layer_one) );
 
         // Adjusting weights
-        weights_one = weights_one.add( layer_one.T.dot(layer_two_delta) );
-        weights_zero = weights_zero.add( layer_zero.T.dot(layer_one_delta) );
+        weights_one = weights_one.subtract(
+            layer_one.T.dot(layer_two_delta).multiply(alpha)
+        );
+
+        weights_zero = weights_zero.subtract(
+            layer_zero.T.dot(layer_one_delta).multiply(alpha)
+        );
     }
 }
 

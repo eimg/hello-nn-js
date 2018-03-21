@@ -147,7 +147,7 @@ var weights_zero = nj.array( rand(3, 4) );
 var weights_one = nj.array( rand(4, 1) );
 ```
 
-နမူနာဒေတာသည် Row (၄) ခုနှင့် Column (၃) ခုပါဝင်သော Array Matrix တစ်ခုဖြစ်သည်။ ထို ဒေတာ Matrix ကို စီစစ်နိုင်ရန် `weights_zero` အား Row (၃) ခုနှင့် Column (၄) ခုပါဝင်သော Random Array Matrix အဖြစ် သတ်မှတ်ထားသည်။ အဘယ်ကြောင့် (၃)(၄) ဖြစ်နေသနည်း? အထက်တွင် ထည့်သွင်း ဖော်ပြခဲ့သည် Dot Product Matrix Multiplication ကို ပြန်လေ့လာကြည့်ပါ။ Column နှင့် Row ကို မြှောက်မည်ဖြစ်သဖြင့် ဒေတာတွင် Row (၄) ခု Column (၃) ခုပါဝင်ပြီး Weight တွင် Row (၃) ခု Column (၄) ခု ပါဝင်ခြင်း ဖြစ်သည်။
+နမူနာဒေတာသည် Row (၄) ခုနှင့် Column (၃) ခုပါဝင်သော Array Matrix တစ်ခုဖြစ်သည်။ ထို ဒေတာ Matrix ကို စီစစ်နိုင်ရန် `weights_zero` အား Row (၃) ခုနှင့် Column (၄) ခုပါဝင်သော Random Array Matrix အဖြစ် သတ်မှတ်ထားသည်။ 
 
 `weights_zero` နှင့် `inputs` ဒေတာကို Matrix Multiplication နှင့် မြှောက်လိုက်သည့်အခါ Row (၄) လေးခုရှိ၍ Column (၁) ခုရှိသော ရလဒ်ကို ရရှိမည်ဖြစ်သည်။ ထိုရလဒ်နှင့် ဆက်လက်တွဲဖက် အလုပ်လုပ်ရန် `weights_one` ကို Row (၄) ခုနှင့် Column (၁) ခုရှိသော Random Array Matrix တစ်ခုအဖြစ် ဆက်လက်ကြေငြာ သတ်မှတ်ထားသည်ကို တွေ့နိုင်သည်။
 
