@@ -26,7 +26,7 @@ function train(inputs, test_result, iterations) {
         var layer_one = nj.sigmoid( layer_zero.dot(weights_zero) );
         var layer_two = nj.sigmoid( layer_one.dot(weights_one) );
 
-        var layer_two_error = layer_two.subtract(test_result);
+        var layer_two_error = test_result.subtract(layer_two);
 
         if ((i % 10000) == 0) {
             console.log(i + " - Error: " + nj.mean(nj.abs(layer_two_error)));
@@ -38,11 +38,11 @@ function train(inputs, test_result, iterations) {
         var layer_one_delta = layer_one_error.multiply( curve(layer_one) );
 
         // Adjusting weights
-        weights_one = weights_one.subtract(
+        weights_one = weights_one.add(
             layer_one.T.dot(layer_two_delta).multiply(alpha)
         );
 
-        weights_zero = weights_zero.subtract(
+        weights_zero = weights_zero.add(
             layer_zero.T.dot(layer_one_delta).multiply(alpha)
         );
     }
