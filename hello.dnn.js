@@ -9,8 +9,8 @@ var inputs = nj.array([
 
 var test_result = nj.array([[0, 0, 1, 1]]).T;
 
-var weights_zero = nj.array(rand(3, 4));
-var weights_one = nj.array(rand(4, 1));
+var weights_zero = nj.array(rand(3, 8));
+var weights_one = nj.array(rand(8, 1));
 
 function train(inputs, test_result, iterations) {
     for(var i = 0; i < iterations; i++) {
@@ -22,7 +22,7 @@ function train(inputs, test_result, iterations) {
         var layer_two_error = test_result.subtract(layer_two);
 
         if ((i % 10000) == 0) {
-            console.log("Error:" + nj.mean(nj.abs(layer_two_error)));
+            console.log(i + " - Error: " + nj.mean(nj.abs(layer_two_error)));
         }
 
         // Backpropagation (sending back layer_two errors to layer_one)

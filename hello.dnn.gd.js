@@ -29,7 +29,7 @@ function train(inputs, test_result, iterations) {
         var layer_two_error = layer_two.subtract(test_result);
 
         if ((i % 10000) == 0) {
-            console.log("Error:" + nj.mean(nj.abs(layer_two_error)));
+            console.log(i + " - Error: " + nj.mean(nj.abs(layer_two_error)));
         }
 
         // Backpropagation (sending back layer_two errors to layer_one)
